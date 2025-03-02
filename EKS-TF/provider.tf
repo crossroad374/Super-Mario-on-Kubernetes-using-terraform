@@ -5,9 +5,16 @@ terraform {
       version = "~> 5.0"
     }
   }
+
+
+  backend "s3" {
+    bucket = "mario-ishu1709-bucket" # Replace with your actual S3 bucket name
+    key    = "EKS/terraform.tfstate"
+    region = "eu-west-1"
+  }
 }
 
 # Configure the AWS Provider
 provider "aws" {
-  region = "ap-south-1"
+  region = "eu-west-1"
 }
